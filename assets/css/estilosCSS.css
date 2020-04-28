@@ -1,0 +1,141 @@
+.título{
+
+    color: rgb(0, 0, 0);
+    background: -webkit-linear-gradient(top, rgba(212,228,239,1) 0%, rgba(134,174,204,0.7) 100%);    padding: 15px;
+    border:  5px solid rgb(62, 62, 156);
+    text-align: center;
+    border-radius: 25px;
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+    text-shadow:1px 2px rgb(195, 212, 235);
+    font-style: oblique;
+    box-shadow: 10px 10px 20px black;
+}
+
+ul{
+    list-style: none;
+    margin: 100px;
+    border-top-right-radius: 50px;
+    padding-bottom: 30px;
+    padding-top: 10px;
+    background: -webkit-linear-gradient(top, rgba(212,228,239,1) 0%, rgba(134,174,204,0.7) 100%);    
+    border-style: groove;
+    box-shadow: 10px 10px 20px black;
+    min-width: 1000px;
+}
+
+body{
+    background-color: rgb(122, 224, 190);    
+}
+
+li{
+    padding: 10px 10px;
+    font-size: 30px;
+    margin: 10px 50px;
+    text-align: left;
+    border-radius: 25px;
+    border-left:1px solid rgb(255, 255, 255);
+    border-bottom: 1px solid rgb(255, 255, 255);
+    color: rgb(15, 5, 112);
+    line-height: 30px;
+}
+
+ul li:first-child{
+    padding: 30px;
+    margin-right: 400px;
+}
+
+ul li:last-child{
+    margin-right: 100px;
+}
+
+li:hover{
+    color: rgb(47, 13, 128);
+    background: -webkit-linear-gradient(left, rgba(73,165,191,0.09) 0%, rgba(3,195,247,1) 89%, 
+    rgba(0,196,250,1) 93%, rgba(0,196,250,1) 99%, rgb(20, 150, 201) 100%);
+    text-shadow:1px 1px rgb(255, 255, 255);
+}
+
+img{
+    float: left;
+    width: 200px;
+    margin-top: 110px; 
+    border: 2px solid rgb(148, 149, 155);
+    border-radius: 5%;
+    box-shadow: 10px 10px 20px rgb(0, 0, 0);
+    padding: 5px;
+    background: rgb(229, 231, 231);
+}
+
+
+.li{
+    margin-left: 300px;
+}
+
+p{
+    text-shadow: 1px 1px rgb(24, 10, 85);;
+}
+
+div{
+    
+    width: 300px;
+    float: left;
+    margin: 60px;
+    height: 300px;
+    border: 10px solid black;
+}
+
+.div1{
+    background-image: url(../../images/retro.jpg);
+    background-size: cover;
+}
+
+.div2{
+    background-image: url(../../images/kungFu.png);
+    background-size: cover;
+}
+
+.div3{
+    background-image: url(../../images/coding.jpg);
+    background-size: cover;
+}
+
+div:hover{
+    border-color: rgba(104, 100, 100, 0.5);
+}
+
+a{
+font-size: 15px;
+background: rgba(255, 255, 255, 0.2);
+display: inline-block;
+width: 80px;
+text-decoration: none;
+font-family: Arial, Helvetica, sans-serif;
+padding: 10px;
+box-shadow: 0px 5px 5px black;
+text-align: center;
+font-weight: bold;
+}
+
+ a:hover{
+    background:rgba(0, 0, 0, 0.466);
+    text-decoration: underline;
+    cursor: pointer;}
+    
+ a:visited{
+    color: rgb(255, 255, 255);   
+ }
+
+ a:link{
+    color: rgb(255, 255, 255);
+}
+
+a:active{
+    font-size: 14px;
+}
+
+
+
+
