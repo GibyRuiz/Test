@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trivia</title>
+    
+    <style>
+
+body{
+
+background-size: cover;
+}
+
+div div{
+
+border-bottom: 1px solid black;
+padding: 30px 0px;
+width: 350px;
+}
+
+input{
+display: none;
+
+}
+
+label{
+
+color: cornsilk;
+padding: 5px 5px 5px 50px;
+display: inline-block;
+position: relative;
+cursor: pointer;
+border-radius: 5%;
+transition: all 0.3s ease;
+margin-left: 30px;
+font-size: 30px;
+}
+
+label:before{
+content: "";
+width: 17px;
+height: 17px;
+display: inline-block;
+border: 3px solid rgb(101, 6, 255);
+position: absolute;
+left: 15px;
+border-radius: 50%;
+top: 10px;
+}
+
+label:hover{
+
+    background-color: rgb(131, 184, 233);
+
+}
+
+input:checked + label{
+
+    padding: 5px 5px;
+    background-color: rgb(84, 84, 145);
+}
+
+input:checked + label:before{
+    display: none;
+
+}
+
+h1{
+    width: 300px;
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 30px;
+    background-color: rgb(228, 248, 248);
+    text-align: center;
+    padding: 15px;
+}
+
+div div{
+    background-color: burlywood;
+    
+}
+
+h2{
+
+    margin-left: 30px;
+}
+
+button{
+
+    margin-left: 120px;
+    margin-top: 30px;
+    color: rgb(241, 11, 11);
+    padding: 10px;
+}
+
+
+    </style>
+</head>
+
+<body background="../images/Fondo.jpg">
+
+    <h1>Trivia</h1>
+<div style="width: min-content; margin: auto;">
+
+<div>
+
+    <h2>Un vector tiene magnitud, dirección y:</h2>
+    <input type="checkbox" name="" id="prueba">
+    <label for="prueba">forma</label>
+
+    <input type="checkbox" name="" id="prueba2">
+    <label for="prueba2">sentido</label>
+
+</div>
+
+<br>
+
+<div>
+
+    <h2>El producto cruz devuelve:</h2>
+    <input type="checkbox" name="" id="prueba3">
+    <label for="prueba3">un vector</label>
+
+    <input type="checkbox" name="" id="prueba4">
+    <label for="prueba4">un escalar</label>
+
+</div>
+
+<br>
+
+<div>
+
+    <h2>La magnitud es lo mismo que:</h2>
+    <input type="checkbox" name="" id="prueba5">
+    <label for="prueba5">la norma</label>
+
+    <input type="checkbox" name="" id="prueba6">
+    <label for="prueba6">el valor absoluto</label>
+
+            <button>COMPROBAR</button>
+</div>
+
+</div>
+
+<script src="../assets/js/trivia.js"></script>
+
+</body>
+</html>
