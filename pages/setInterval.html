@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <style>
+
+        button{
+
+            margin-top: 20px;
+            margin-left: 20px;
+        }
+        
+    </style>
+</head>
+<body style="transition: all 0.9s ease;">
+
+   <button><a href="./Ejercicios.html"><h3>VOLVER</h3></a></button>
+
+   
+    <script>
+
+
+        setInterval(() => {
+
+            var ventana = document.querySelector("body");
+            var rojoAleatorio = Math.floor(Math.random() * 255); 
+            var verdeAleatorio = Math.floor(Math.random() * 255); 
+            var azulAleatorio = Math.floor(Math.random() * 255); 
+
+
+            ventana.style.background = "rgb(" + rojoAleatorio + "," + verdeAleatorio + "," + azulAleatorio + ")";
+
+
+        }, 2000);
+
+         
+    </script>
+</body>
+</html>
