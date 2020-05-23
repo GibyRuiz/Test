@@ -1,0 +1,76 @@
+
+
+        body{
+
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .contenedor{
+
+            display: flex;
+            justify-content:space-around;
+            
+        }
+
+        div div{
+
+            background-color: cornflowerblue;
+        }
+
+        .h1{
+
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .boton{
+
+            padding: 10px 15px;
+            margin: 10px;
+            cursor: pointer;
+            
+        }
+
+        .boton:hover{
+            background-color: rgb(135, 182, 245);
+        }
+
+        @media all and (max-width: 900px){
+
+            .contenedor{
+                flex-direction: column;
+                width: fit-content;
+                margin: auto;
+            }
+
+            .h1{
+                align-items: center;
+            }
+
+            .boton{
+                text-align: center;
+                
+            }
+
+        }
+
+        .contenedorPoligono{
+            display: flex;
+            height: 300px;
+            /* border: 1px solid black; */
+            align-items: center;
+            
+        }
+
+        .piligono{
+            width: 100px;
+            height: 30px;
+            padding: 15px;
+            background-color: blueviolet;
+            transition: all 1s ease;
+            text-align: center;
+            padding-top: 120px;
+        
+        }
+
+       

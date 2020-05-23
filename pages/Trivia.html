@@ -4,98 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trivia</title>
-    
-<style>
-
-body{
-
-background-size: cover;
-}
-
-div div{
-
-border-bottom: 1px solid black;
-padding: 30px 0px;
-width: 350px;
-}
-
-input{
-display: none;
-
-}
-
-label{
-
-color: cornsilk;
-padding: 5px 5px 5px 50px;
-display: inline-block;
-position: relative;
-cursor: pointer;
-border-radius: 5%;
-transition: all 0.3s ease;
-margin-left: 30px;
-font-size: 30px;
-}
-
-label:before{
-content: "";
-width: 17px;
-height: 17px;
-display: inline-block;
-border: 3px solid rgb(101, 6, 255);
-position: absolute;
-left: 15px;
-border-radius: 50%;
-top: 10px;
-}
-
-label:hover{
-
-    background-color: rgb(131, 184, 233);
-
-}
-
-input:checked + label{
-
-    padding: 5px 5px;
-    background-color: rgb(84, 84, 145);
-}
-
-input:checked + label:before{
-    display: none;
-
-}
-
-h1{
-    width: 300px;
-    margin: auto;
-    margin-top: 50px;
-    margin-bottom: 30px;
-    background-color: rgb(228, 248, 248);
-    text-align: center;
-    padding: 15px;
-}
-
-div div{
-    background-color: burlywood;
-    
-}
-
-h2{
-
-    margin-left: 30px;
-}
-
-button{
-
-    margin-left: 60px;
-    margin-top: 30px;
-    color: rgb(241, 11, 11);
-    padding: 10px;
-    
-}
-
-</style>
+    <link rel="stylesheet" href="../assets/css/trivia.css">
 </head>
 
 <body background="../images/Fondo.jpg">
@@ -131,6 +40,32 @@ button{
 
 <div>
 
+    <h2>Un vector unitario tiene magnitud:</h2>
+    <input type="checkbox" name="" id="prueba7">
+    <label for="prueba7">uno</label>
+
+    <input type="checkbox" name="" id="prueba8">
+    <label for="prueba8">cero</label>
+
+</div>
+
+<br>
+
+<div>
+
+    <h2>La fórmula de la magnitud deriva de:</h2>
+    <input type="checkbox" name="" id="prueba9">
+    <label for="prueba9">Pitágoras</label>
+
+    <input type="checkbox" name="" id="prueba10">
+    <label for="prueba10">Tales</label>
+
+</div>
+
+<br>
+
+<div>
+
     <h2>La magnitud es lo mismo que:</h2>
     <input type="checkbox" name="" id="prueba5">
     <label for="prueba5">la norma</label>
@@ -138,8 +73,9 @@ button{
     <input type="checkbox" name="" id="prueba6">
     <label for="prueba6">el valor absoluto</label>
 
-            <button>COMPROBAR<button style="position: absolute; margin-left: 40px;"><a href="./Ejercicios.html">VOLVER</a></button></button>    
+    <button>COMPROBAR<button style="position: absolute; margin-left: 40px;"><a href="./Ejercicios.html">VOLVER</a></button></button>    
 
+    <h4 id="puntaje">Puntaje:</h4>
 </div>
 
 </div>
