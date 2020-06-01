@@ -62,30 +62,22 @@ function preload ()
 
 function create ()
 {
-    //  A simple background for our game
     this.add.image(400, 300, 'sky');
 
-    //  The platforms group contains the ground and the 2 ledges we can jump on
     platforms = this.physics.add.staticGroup();
 
-    //  Here we create the ground.
-    //  Scale it to fit the width of the game (the original sprite is 400x32 in size)
     platforms.create(400, 568, 'ground').setScale(2).refreshBody();
 
-    //  Now let's create some ledges
     platforms.create(600, 300, 'ground');
     platforms.create(50, 150, 'ground');
     platforms.create(780, 120, 'ground');
     platforms.create(50, 450, 'ground');
 
-    // The player and its settings
     player = this.physics.add.sprite(100, 450, 'dude');
 
-    //  Player physics properties. Give the little guy a slight bounce.
     player.setBounce(0.2);
     player.setCollideWorldBounds(true);
 
-    //  Our player animations, turning, walking left and walking right.
     this.anims.create({
         key: 'left',
         frames: this.anims.generateFrameNumbers('dude', { start: 0, end: 3 }),
@@ -106,10 +98,8 @@ function create ()
         repeat: -1
     });
 
-    //  Input Events
     cursors = this.input.keyboard.createCursorKeys();
 
-    //  Some stars to collect, 12 in total, evenly spaced 70 pixels apart along the x axis
     stars = this.physics.add.group({
         key: 'star',
         repeat: 11,
@@ -134,7 +124,6 @@ function create ()
 
     stars.children.iterate(function (child) {
 
-        //  Give each star a slightly different bounce
         child.setBounceY(Phaser.Math.FloatBetween(0.4, 0.8));
 
     });
@@ -147,8 +136,7 @@ function create ()
 
     bombs = this.physics.add.group();
 
-    //  The score
-
+    
     const configText = {
         x: 800,
         y: 16,
@@ -162,17 +150,14 @@ function create ()
     scoreText = this.make.text(configText);
     scoreText.setBackgroundColor("red");
     
-    // scoreText = this.add.text(16, 16, 'Score: 0', { fontSize: '40px', fill: '#FFF', fontStyle: "bold italic",
-    // fontFamily: "handWriting"});
-
-    //  Collide the player and the stars with the platforms
+    
     this.physics.add.collider(player, platforms);
     this.physics.add.collider(stars, platforms);
     this.physics.add.collider(bombs, platforms);
     this.physics.add.collider(stars2, platforms);
 
 
-    //  Checks to see if the player overlaps with any of the stars, if he does call the collectStar function
+   
     this.physics.add.overlap(player, stars, collectStar, null, this);
     this.physics.add.overlap(player, stars2, collectStar, null, this);
 
@@ -191,10 +176,10 @@ function create ()
     timeLine.add({
         targets: scoreText,
         y: 0,
-        duration: 300,
+        duration: 250,
         yoyo: true,
         ease: "Power3",
-        repeat: 4
+        repeat: 3
     });
 
     timeLine.play();
@@ -207,7 +192,8 @@ function update ()
 {
     if (gameOver)
     {
-        return;
+        score = 0;
+        gameOver = false;
     }
 
     if (cursors.left.isDown)
@@ -287,7 +273,6 @@ function collectStar (player, star)
 
     if (stars.countActive(true) === 0 && stars2.countActive(true) === 0)
     {
-        //  A new batch of stars to collect
         stars.children.iterate(function (child) {
 
             child.enableBody(true, child.x, 0, true, true);
@@ -321,6 +306,13 @@ function hitBomb (player, bomb)
     player.anims.play('turn');
 
     gameOver = true;
+    
+    
+
+    this.scene.restart();
+
+    
+
 }
 
 </script>
