@@ -4,11 +4,15 @@
     <meta charset="UTF-8" />
     <title>Trabajo Módulo 4</title>
     <script src="//cdn.jsdelivr.net/npm/phaser@3.11.0/dist/phaser.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Gochi+Hand&display=swap" rel="stylesheet">
     <style type="text/css">
         body {
             margin: 0;
         }
+
     </style>
+
+    
 </head>
 <body>
 
@@ -40,6 +44,8 @@ var cursors;
 var score = 0;
 var gameOver = false;
 var scoreText;
+var timeLine;
+
 
 var game = new Phaser.Game(config);
 
@@ -142,7 +148,22 @@ function create ()
     bombs = this.physics.add.group();
 
     //  The score
-    scoreText = this.add.text(16, 16, 'score: 0', { fontSize: '32px', fill: '#000' });
+
+    const configText = {
+        x: 800,
+        y: 16,
+        text: "Score: 0",
+        style:{
+            fontFamily: "Gochi Hand, cursive",
+            fontSize: 40,
+        }
+    }
+
+    scoreText = this.make.text(configText);
+    scoreText.setBackgroundColor("red");
+    
+    // scoreText = this.add.text(16, 16, 'Score: 0', { fontSize: '40px', fill: '#FFF', fontStyle: "bold italic",
+    // fontFamily: "handWriting"});
 
     //  Collide the player and the stars with the platforms
     this.physics.add.collider(player, platforms);
@@ -157,7 +178,30 @@ function create ()
 
 
     this.physics.add.collider(player, bombs, hitBomb, null, this);
+
+    this.tweens.add({
+        targets: scoreText,
+        duration: 300,
+        x: 16,
+        delay: 300,
+        ease: "Power3"
+    });
+
+    timeLine = this.tweens.createTimeline();
+    timeLine.add({
+        targets: scoreText,
+        y: 0,
+        duration: 300,
+        yoyo: true,
+        ease: "Power3",
+        repeat: 4
+    });
+
+    timeLine.play();
+    
 }
+
+
 
 function update ()
 {
@@ -194,16 +238,21 @@ function update ()
 var contadorEstrellasNegras = 1;
 var contadorEstrellaAmarillas = 1;
 
+
+
 function collectStar (player, star)
 {
     star.disableBody(true, true);
-
+    
     
     
     if (stars.countActive(false) === contadorEstrellaAmarillas){
     
         score += 10;
         contadorEstrellaAmarillas++;
+        
+        
+        
 
             if(contadorEstrellaAmarillas == 13){
                 contadorEstrellaAmarillas = 1
@@ -214,6 +263,18 @@ function collectStar (player, star)
     
         score += 15;
         contadorEstrellasNegras++;
+
+        timeLine = this.tweens.createTimeline();
+        timeLine.add({
+        targets: scoreText,
+        y: 0,
+        duration: 150,
+        yoyo: true,
+        ease: "Power1",
+        
+        });
+
+        timeLine.play();
 
             if(contadorEstrellasNegras == 6){
                 contadorEstrellasNegras = 1
